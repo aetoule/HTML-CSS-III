@@ -1,0 +1,103 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 600px;
+    height: 200px;
+    background: lightpink;
+    transition: 1s;
+
+    animation-name: animate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+/* the name from above */
+@keyframes animate {
+    0% {
+        box-shadow: 0 0 0 black;
+        background: powderblue;
+        width: 300px;
+        /* transform: scale(1) rotate(0deg); */
+    }
+
+    50% {
+        box-shadow: 1px 4px 5px black;
+        background: orange;
+        width: 600px;
+    }
+
+    100% {
+        box-shadow: 1px 4px 5px black;
+        background: lightpink;
+        width: 600px;
+        /* transform: scale(1.5) rotate(1080deg); */
+    }
+}
+
+@media(min-width: 600px) and (max-width: 800px) {
+    .box {
+        background: powderblue;
+        width: 300px;
+    }
+}
+
+@media (orientation: landscape) {
+    .box {
+        /* vertical, horizontal, z index, color */
+        box-shadow: 1px 4px 5px black;
+    }
+}
+
+.flip-container {
+    perspective: 1000px;
+    
+}
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 320px;
+    height: 480px;
+}
+
+/* flip speed here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
+

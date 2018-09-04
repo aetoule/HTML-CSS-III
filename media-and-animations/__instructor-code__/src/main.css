@@ -1,0 +1,28 @@
+header {
+    width: 100vw;
+    height: 90px;
+    background: rgb(251, 141, 14);
+    color: white;
+}
+
+header > div {
+    max-width: 1000px;
+    width: 100%;
+    background: red;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+}
+
+header a {
+    color: white;
+}
+

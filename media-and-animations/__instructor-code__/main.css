@@ -1,0 +1,60 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 600px;
+    height: 200px;
+    background: #ffa500;
+    transition: 1s;
+
+    animation-name: animate;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+
+     0%{
+        box-shadow: 0 0 0 black;
+        background: powderblue;
+        width: 300px;
+        transform: scale(0) rotate(0deg);
+    }
+
+    50%{
+        box-shadow:1px 4px 5px black;
+        background: #ffa500;
+        width: 600px;
+    }
+    100%{
+        box-shadow: 0 0 0 black;
+        background: powderblue;
+        width: 300px;
+        transform: scale(1.5) rotate(1080deg);
+    }
+
+
+}
+
+
+/* @media (min-width: 800px) and (max-width: 1000px){
+    .box{
+        background: powderblue;
+        width: 300px;
+    }
+}
+
+@media (max-width: 799px) {
+    .box {
+        box-shadow:1px 4px 5px black;
+    }
+}  */
+
